@@ -3552,8 +3552,8 @@ async function ensurePdfBrandAssets() {
   if (_pdfBrandAssets.loaded) return _pdfBrandAssets;
   try {
     const [logo, picto] = await Promise.all([
-      loadImageAsDataURL('assets/logo-codex.jpg'),
-      loadImageAsDataURL('assets/picto-codex.jpg')
+      loadImageAsDataURL('./assets/logo-codex.jpg'),
+      loadImageAsDataURL('assets/picto-codex.jpg'),
     ]);
     _pdfBrandAssets.logo = logo;
     _pdfBrandAssets.picto = picto;
@@ -4894,7 +4894,6 @@ if ('serviceWorker' in navigator) {
     .catch(e => console.warn('SW erreur', e));
 }
 </script>
-<script src="pdf-v2.js"></script>
-<script src="lignes.js"></script>
+<script src="./pdf-v2.js"></script>
 </body>
 </html>
