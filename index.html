@@ -14,8 +14,7 @@
   <!-- Icônes -->
   <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
-  <!-- Polices locales -->
-  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  <!-- Polices locales --loadScript('./jspdf.umd.min.js'
   <!-- Librairies — local en priorité, CDN en fallback -->
   <script>
   function loadScript(local, cdn) {
@@ -34,8 +33,8 @@
     });
   }
   window._libsReady = Promise.all([
-    loadScript('./libs/jspdf.umd.min.js',   'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'),
-    loadScript('./libs/xlsx.full.min.js',    'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js')
+    loadScript('./jspdf.umd.min.js',   'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'),
+    loadScript('./xlsx.full.min.js',    'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js')
   ]);
   
 async function renderHist() {
@@ -3552,8 +3551,8 @@ async function ensurePdfBrandAssets() {
   if (_pdfBrandAssets.loaded) return _pdfBrandAssets;
   try {
     const [logo, picto] = await Promise.all([
-      loadImageAsDataURL('./assets/logo-codex.jpg'),
-      loadImageAsDataURL('assets/picto-codex.jpg'),
+      loadImageAsDataURL('./logo-codex.jpg'),
+      loadImageAsDataURL('./logo-codex.jpg'),
     ]);
     _pdfBrandAssets.logo = logo;
     _pdfBrandAssets.picto = picto;
